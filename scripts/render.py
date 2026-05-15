@@ -98,18 +98,29 @@ def parse_draft_sections(draft_md: str, selections: list[dict], candidates: dict
         if not sel_items:
             continue
         body_md = section_bodies.get(cat, "")
-        # Split body into per-item blocks by blank lines between paragraphs
-        # We trust the draft has one block per item in order
-        paras = [p.strip() for p in re.split(r"\n{2,}", body_md) if p.strip()]
+        # Split into paragraphs; separate "Source: URL" lines from body text.
+        # Each item in the draft is one body paragraph followed by one Source: paragraph.
+        all_paras = [p.strip() for p in re.split(r"\n{2,}", body_md) if p.strip()]
+        body_paras, source_urls = [], []
+        for p in all_paras:
+            if p.startswith("Source:"):
+                source_urls.append(p.replace("Source:", "").strip())
+            else:
+                body_paras.append(p)
         rendered_items = []
         for idx, meta in enumerate(sel_items):
-            body_text = paras[idx] if idx < len(paras) else ""
+            body_text  = body_paras[idx] if idx < len(body_paras) else ""
+            source_url = source_urls[idx] if idx < len(source_urls) else meta["source_url"]
+            # Extract leading **bold text** as the display headline
+            m = re.match(r"^\*\*(.+?)\*\*", body_text)
+            headline   = m.group(1) if m else meta["headline"]
+            body_rest  = body_text[m.end():].strip() if m else body_text
             rendered_items.append({
-                "headline": meta["headline"],
-                "body_html": md_lib.markdown(body_text),
-                "source_url": meta["source_url"],
+                "headline":   headline,
+                "body_html":  md_lib.markdown(body_rest),
+                "source_url": source_url,
             })
-        sections.append({"label": SECTION_MAP[cat], "items": rendered_items})
+        sections.append({"label": SECTION_MAP[cat], "stories": rendered_items})
 
     return sections
 
