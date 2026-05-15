@@ -1,0 +1,29 @@
+category: physical_ai
+label: "Physical AI & Robotics"
+
+sources:
+  - https://spectrum.ieee.org/robotics
+  - https://www.therobotreport.com/
+  - https://techcrunch.com/tag/robotics/
+  - https://www.reuters.com/technology/
+  - https://www.ft.com/technology         # FT robotics coverage
+  - https://www.boston-dynamics.com/blog
+  - https://bair.berkeley.edu/blog/
+
+search_queries:
+  - "autonomous robot logistics port terminal 2025"
+  - "physical AI embodied robot deployment supply chain"
+  - "humanoid robot warehouse autonomous vehicle industrial"
+  - "autonomous ship vessel AI navigation 2025"
+  - "port automation crane AGV AI 2025"
+
+materiality_criteria: |
+  A story is material if it meets ONE or more:
+  - Deployment or pilot of autonomous equipment in port, terminal, or logistics context
+  - Robot / autonomous vehicle milestone in cargo handling, last-mile, or yard management
+  - AI-driven vessel navigation, fleet management, or predictive maintenance
+  - Regulatory approval or standard for autonomous maritime or port operations
+  - Strategic investment in physical-AI for supply chain > $100M
+
+max_atoms: 7
+min_score: 6

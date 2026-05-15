@@ -1,0 +1,33 @@
+category: foundation_models
+label: "Foundation Models"
+
+# Primary sources — checked every run
+sources:
+  - https://www.anthropic.com/news
+  - https://openai.com/news
+  - https://deepmind.google/discover/blog/
+  - https://ai.meta.com/blog/
+  - https://mistral.ai/news/
+  - https://www.reuters.com/technology/artificial-intelligence/
+  - https://techcrunch.com/category/artificial-intelligence/
+  - https://arxiv.org/list/cs.LG/recent   # for landmark papers only
+
+# Search queries for web_search tool
+search_queries:
+  - "foundation model release benchmark 2025"
+  - "LLM GPT Claude Gemini new model announcement this week"
+  - "large language model reasoning multimodal breakthrough"
+  - "AI model training compute cost efficiency improvement"
+
+# What counts as material for a port-operator CFO
+materiality_criteria: |
+  A story is material if it meets ONE or more of:
+  - New model release or significant capability upgrade affecting enterprise use
+  - Major cost reduction (>20%) in inference or training
+  - Capability that changes what is feasible for document AI, forecasting, or operations
+  - Significant safety or regulatory milestone that affects enterprise adoption
+  - Acquisition, partnership, or funding round > $500M affecting the model landscape
+
+# Hard limits
+max_atoms: 7
+min_score: 6  # out of 10

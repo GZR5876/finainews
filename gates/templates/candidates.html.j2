@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gate 1 — AI News Candidates · {{ week_label }}</title>
+<style>
+  :root {
+    --bg: #0f1117; --surface: #1a1d27; --border: #2d3149;
+    --accent: #4f8ef7; --green: #22c55e; --muted: #8b93b0;
+    --text: #e2e6f3; --score-hi: #22c55e; --score-mid: #f59e0b; --score-lo: #ef4444;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: system-ui, sans-serif;
+         font-size: 15px; line-height: 1.6; padding: 1.5rem; }
+  h1 { font-size: 1.4rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-bottom: 1.5rem; }
+  .toolbar { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; align-items: center; }
+  .toolbar button { padding: 0.4rem 1rem; border-radius: 6px; border: 1px solid var(--border);
+                    background: var(--surface); color: var(--text); cursor: pointer; font-size: 14px; }
+  .toolbar button:hover { border-color: var(--accent); }
+  .filter-pills { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .pill { padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid var(--border);
+          background: var(--surface); cursor: pointer; font-size: 13px; }
+  .pill.active { border-color: var(--accent); color: var(--accent); }
+  .count-badge { margin-left: auto; font-size: 13px; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1rem; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+          padding: 1rem 1.1rem; transition: border-color 0.15s; cursor: pointer; }
+  .card:hover { border-color: var(--accent); }
+  .card.selected { border-color: var(--green); background: #0d1f14; }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .category-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;
+                  color: var(--muted); padding: 0.2rem 0.5rem; border: 1px solid var(--border);
+                  border-radius: 4px; white-space: nowrap; }
+  .score { font-size: 13px; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 4px; }
+  .score-hi { background: #14532d; color: var(--score-hi); }
+  .score-mid { background: #451a03; color: var(--score-mid); }
+  .score-lo { background: #450a0a; color: var(--score-lo); }
+  .headline { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .what { font-size: 13px; color: var(--muted); margin-bottom: 0.4rem; }
+  .so-what { font-size: 13px; }
+  .so-what strong { color: var(--accent); }
+  .card-footer { margin-top: 0.75rem; display: flex; justify-content: space-between; align-items: center; }
+  .source-link { font-size: 12px; color: var(--muted); text-decoration: none; overflow: hidden;
+                 text-overflow: ellipsis; white-space: nowrap; max-width: 240px; }
+  .source-link:hover { color: var(--accent); }
+  .checkbox { width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; }
+  .submit-bar { position: sticky; bottom: 0; background: var(--bg); padding: 1rem 0;
+                border-top: 1px solid var(--border); margin-top: 2rem;
+                display: flex; align-items: center; gap: 1rem; }
+  .submit-btn { padding: 0.6rem 2rem; background: var(--accent); color: #fff;
+                border: none; border-radius: 8px; font-size: 15px; font-weight: 600;
+                cursor: pointer; }
+  .submit-btn:hover { background: #3a7ae0; }
+  .status { font-size: 14px; color: var(--muted); }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<h1>AI Weekly — Gate 1 · Candidate Review</h1>
+<p class="subtitle">Week of {{ week_label }} &nbsp;·&nbsp; {{ total }} candidates across {{ categories|length }} categories &nbsp;·&nbsp; Tick what goes in the newsletter, then Submit.</p>
+
+<div class="toolbar">
+  <button onclick="selectAll()">Select all</button>
+  <button onclick="selectNone()">Clear all</button>
+  <button onclick="selectTopN(3)">Top 3 per category</button>
+  <div class="filter-pills" id="pills">
+    <span class="pill active" data-cat="all" onclick="filterCat(this)">All</span>
+    {% for cat in categories %}
+    <span class="pill" data-cat="{{ cat.key }}" onclick="filterCat(this)">{{ cat.label }}</span>
+    {% endfor %}
+  </div>
+  <span class="count-badge" id="selected-count">0 selected</span>
+</div>
+
+<div class="grid" id="grid">
+{% for item in items %}
+<div class="card" id="card-{{ item.id }}" data-cat="{{ item.category }}" data-score="{{ item.scout_score }}" onclick="toggleCard({{ item.id }})">
+  <div class="card-header">
+    <span class="category-tag">{{ item.label }}</span>
+    <span class="score {% if item.scout_score >= 8 %}score-hi{% elif item.scout_score >= 6 %}score-mid{% else %}score-lo{% endif %}">
+      {{ "%.1f"|format(item.scout_score) }}
+    </span>
+  </div>
+  <div class="headline">{{ item.headline }}</div>
+  <div class="what">{{ item.what }}</div>
+  <div class="so-what"><strong>So what:</strong> {{ item.so_what }}</div>
+  <div class="card-footer">
+    <a class="source-link" href="{{ item.url }}" target="_blank" onclick="event.stopPropagation()">{{ item.url }}</a>
+    <input class="checkbox" type="checkbox" id="chk-{{ item.id }}" onclick="event.stopPropagation(); syncCard({{ item.id }})" />
+  </div>
+</div>
+{% endfor %}
+</div>
+
+<div class="submit-bar">
+  <button class="submit-btn" onclick="submitSelections()">Submit shortlist →</button>
+  <span class="status" id="status-msg"></span>
+</div>
+
+<script>
+const items = {{ items_json }};
+let currentCat = 'all';
+
+function updateCount() {
+  const n = document.querySelectorAll('.checkbox:checked').length;
+  document.getElementById('selected-count').textContent = n + ' selected';
+}
+
+function toggleCard(id) {
+  const chk = document.getElementById('chk-' + id);
+  chk.checked = !chk.checked;
+  syncCard(id);
+}
+
+function syncCard(id) {
+  const chk = document.getElementById('chk-' + id);
+  const card = document.getElementById('card-' + id);
+  card.classList.toggle('selected', chk.checked);
+  updateCount();
+}
+
+function selectAll() {
+  document.querySelectorAll('.card:not(.hidden) .checkbox').forEach(c => {
+    c.checked = true;
+    syncCard(parseInt(c.id.replace('chk-', '')));
+  });
+}
+
+function selectNone() {
+  document.querySelectorAll('.checkbox').forEach(c => {
+    c.checked = false;
+    syncCard(parseInt(c.id.replace('chk-', '')));
+  });
+}
+
+function selectTopN(n) {
+  selectNone();
+  const byCategory = {};
+  items.forEach(item => {
+    if (!byCategory[item.category]) byCategory[item.category] = [];
+    byCategory[item.category].push(item);
+  });
+  Object.values(byCategory).forEach(catItems => {
+    catItems.sort((a, b) => b.scout_score - a.scout_score).slice(0, n).forEach(item => {
+      const chk = document.getElementById('chk-' + item.id);
+      if (chk && !document.getElementById('card-' + item.id).classList.contains('hidden')) {
+        chk.checked = true;
+        syncCard(item.id);
+      }
+    });
+  });
+}
+
+function filterCat(pill) {
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  pill.classList.add('active');
+  currentCat = pill.dataset.cat;
+  document.querySelectorAll('.card').forEach(card => {
+    const show = currentCat === 'all' || card.dataset.cat === currentCat;
+    card.classList.toggle('hidden', !show);
+  });
+}
+
+async function submitSelections() {
+  const payload = {};
+  items.forEach(item => {
+    payload[item.id] = document.getElementById('chk-' + item.id).checked;
+  });
+  document.getElementById('status-msg').textContent = 'Submitting…';
+  try {
+    const r = await fetch('/submit', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+    });
+    const d = await r.json();
+    document.getElementById('status-msg').textContent =
+      `✓ Saved ${d.count} selections. You can close this tab.`;
+    document.querySelector('.submit-btn').disabled = true;
+  } catch(e) {
+    document.getElementById('status-msg').textContent = 'Error: ' + e.message;
+  }
+}
+</script>
+</body>
+</html>

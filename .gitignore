@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+data/candidates.html
+data/selections.json
+# Keep DB and rendered outputs
+!data/news.db
+!data/draft_*.md
+!data/newsletter_*.html

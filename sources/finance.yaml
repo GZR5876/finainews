@@ -1,0 +1,33 @@
+category: finance_ai
+label: "AI in Finance (CFO Office)"
+
+sources:
+  - https://www.journalofaccountancy.com/
+  - https://www.cfo.com/
+  - https://www.accountingtoday.com/
+  - https://www.ft.com/companies/financials
+  - https://hbr.org/topic/technology
+  - https://www.gartner.com/en/finance        # public blog posts only
+  - https://www.pwc.com/gx/en/issues/technology/ai-analysis.html
+  - https://www2.deloitte.com/us/en/insights/topics/finance.html
+
+search_queries:
+  - "AI accounting automation CFO finance 2025"
+  - "AI tax compliance automation corporate 2025"
+  - "treasury management AI cash forecasting 2025"
+  - "AI audit financial reporting enterprise 2025"
+  - "ERP SAP Oracle AI finance module 2025"
+  - "AI accounts payable receivable automation"
+  - "AI financial planning FP&A enterprise 2025"
+
+materiality_criteria: |
+  A story is material if it meets ONE or more:
+  - AI tool or platform that automates or augments CFO-office workflows
+    (AP/AR, close process, tax, treasury, FP&A, audit, reporting)
+  - Regulatory guidance on AI use in financial reporting or tax
+  - Cost or efficiency benchmark from a real enterprise deployment
+  - Risk or governance framework for AI in finance from a Big-4 or regulator
+  - Vendor announcement directly relevant to CFO-office software (SAP, Oracle, Workday, Coupa)
+
+max_atoms: 8
+min_score: 6

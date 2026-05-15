@@ -1,0 +1,29 @@
+category: agents_apps
+label: "AI Agents & Applications"
+
+sources:
+  - https://www.anthropic.com/news
+  - https://openai.com/news
+  - https://techcrunch.com/category/artificial-intelligence/
+  - https://venturebeat.com/ai/
+  - https://www.sequoiacap.com/articles/      # AI market maps / essays
+  - https://a16z.com/tag/artificial-intelligence/
+  - https://www.producthunt.com/categories/ai-assistant
+
+search_queries:
+  - "AI agent autonomous enterprise workflow 2025"
+  - "agentic AI business process automation new launch"
+  - "multi-agent system enterprise deployment 2025"
+  - "AI copilot productivity tool enterprise announcement"
+  - "AI agent supply chain logistics operations 2025"
+
+materiality_criteria: |
+  A story is material if it meets ONE or more:
+  - New AI agent or application with clear enterprise or operational use case
+  - Deployment result with quantified productivity or cost impact
+  - New agentic capability (planning, tool use, memory) that changes what is automatable
+  - Platform or ecosystem announcement that shifts where enterprise AI is built
+  - Governance or safety framework for agentic AI in enterprise settings
+
+max_atoms: 7
+min_score: 6
