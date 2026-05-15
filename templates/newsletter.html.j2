@@ -120,6 +120,26 @@
       color: #1c1c1c;
     }
 
+    /* ── Digest ── */
+    .digest {
+      padding: 24px 36px;
+      background: #f7f7f7;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .digest .digest-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 10px;
+    }
+    .digest p {
+      font-size: 12px;
+      line-height: 1.75;
+      color: #333;
+    }
+
     /* ── Footer ── */
     .footer {
       background: #0d0d0d;
@@ -138,6 +158,13 @@
     <h1>AI in Focus &mdash; {{ week }}</h1>
     <div class="meta">CFO &amp; Finance Leadership &nbsp;/&nbsp; {{ issue_date }}</div>
   </div>
+
+  {% if digest %}
+  <div class="digest">
+    <div class="digest-label">This Week in Brief</div>
+    <p>{{ digest }}</p>
+  </div>
+  {% endif %}
 
   {% for section in sections %}
   <div class="section">

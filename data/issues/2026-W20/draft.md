@@ -1,6 +1,8 @@
 # AI in Focus -- 2026-W20
 *Weekly Intelligence Brief for the CFO & Finance Leadership Team | 15 May 2026*
 
+This week, agentic AI crossed from pilot into production across the enterprise finance stack: SAP, KPMG, and Google each shipped deployments that put AI agents directly inside ERP and close workflows. The most material signal for finance teams is the arrival of ready-to-deploy, audit-grade agents for accounts payable, month-end close, and treasury -- removing the "not enterprise-ready" objection. On the risk side, foundation model API costs are rising sharply, and India's $9bn AI-native greenfield port raises the bar on what port customers will expect from operators in the next capital cycle.
+
 ---
 
 ## 1. Foundation Models

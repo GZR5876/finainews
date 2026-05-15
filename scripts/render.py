@@ -59,6 +59,19 @@ def load_draft(week: str) -> str:
     return path.read_text()
 
 
+def extract_digest(draft_md: str) -> str:
+    """Extract the digest paragraph between the # title and the first ## section."""
+    import re
+    # Strip the H1 title line, then grab text before the first ## header or ---
+    body = re.sub(r"^#[^#].*$", "", draft_md, count=1, flags=re.MULTILINE).strip()
+    # Take everything before the first ## or --- divider
+    match = re.split(r"^(##|---)", body, maxsplit=1, flags=re.MULTILINE)
+    candidate = match[0].strip()
+    # Remove any leading/trailing markdown italics (the dateline)
+    candidate = re.sub(r"^\*.*?\*\s*", "", candidate, flags=re.DOTALL).strip()
+    return candidate
+
+
 def parse_draft_sections(draft_md: str, selections: list[dict], candidates: dict) -> list[dict]:
     """
     Split draft.md on section headers and map body text back to selected items.
@@ -159,12 +172,14 @@ def main():
     candidates = load_candidates(week)
     draft_md   = load_draft(week)
     sections   = parse_draft_sections(draft_md, selections, candidates)
+    digest     = extract_digest(draft_md)
 
     issue_date = date.today().strftime("%d %B %Y")
 
     env = Environment(loader=FileSystemLoader(str(TEMPLATES)))
     tmpl = env.get_template("newsletter.html.j2")
     html = tmpl.render(week=week, issue_date=issue_date, sections=sections,
+                       digest=digest,
                        generated_at=datetime.now().isoformat(timespec="minutes"))
 
     html_path = issue_dir / "newsletter.html"

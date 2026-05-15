@@ -72,7 +72,13 @@ After all categories are scouted:
 ## Phase 3: Polish (human checkpoint)
 
 1. Read data/issues/{week}/selections.json.
-2. For each selected item, write a newsletter entry in the voice defined in
+2. Write a **digest paragraph** (60-80 words, no bullet points) that goes between
+   the dateline and the first section. Structure:
+   - Sentence 1: the dominant theme across all items this week.
+   - Sentence 2: the most material finance-specific signal.
+   - Sentence 3: one risk or watch item.
+   Place it in draft.md directly after the italicised dateline, before the first `---`.
+3. For each selected item, write a newsletter entry in the voice defined in
    references/voice.md. Hard rules for every item:
    - **Headline**: "Company/who did what" format -- subject + verb + object, max 10
      words, no qualifiers. Write it as a plain text title above the body sentences.
