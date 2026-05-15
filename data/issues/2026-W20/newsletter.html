@@ -2,108 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI Intelligence Brief — 2026-W20</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI in Focus -- 2026-W20</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; }
 
-    .wrapper { max-width: 720px; margin: 0 auto; background: white; }
+    body {
+      background: #e8e8e8;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      color: #1c1c1c;
+    }
 
-    /* Header */
-    .header { background: #003366; color: white; padding: 28px 36px 20px; }
-    .header .eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-                        opacity: 0.7; margin-bottom: 6px; }
-    .header h1 { font-size: 22px; font-weight: 700; line-height: 1.2; }
-    .header .meta { font-size: 11px; opacity: 0.6; margin-top: 8px; }
+    .wrapper {
+      max-width: 620px;
+      margin: 32px auto;
+      background: #ffffff;
+    }
 
-    /* Section */
-    .section { padding: 24px 36px 0; }
-    .section-label { display: inline-block; background: #003366; color: white;
-                      font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
-                      padding: 3px 10px; border-radius: 3px; margin-bottom: 16px; }
+    /* ── Header ── */
+    .header {
+      background: #0d0d0d;
+      padding: 32px 36px 28px;
+      border-bottom: 3px solid #333;
+    }
+    .header .label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .header h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #f0f0f0;
+      letter-spacing: 0.5px;
+    }
+    .header .meta {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #555;
+    }
 
-    /* Item */
-    .item { border-left: 3px solid #003366; padding: 0 0 20px 16px; margin-bottom: 20px; }
-    .item:last-child { border-left-color: #e0e0e0; }
-    .item h3 { font-size: 14px; font-weight: 700; color: #003366; margin-bottom: 6px;
-               line-height: 1.35; }
-    .item p { font-size: 13px; line-height: 1.65; color: #333; }
-    .item .source { font-size: 11px; color: #888; margin-top: 6px; }
-    .item .source a { color: #888; }
+    /* ── Section ── */
+    .section {
+      padding: 0 36px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .section:last-of-type {
+      border-bottom: none;
+    }
 
-    /* Divider */
-    hr { border: none; border-top: 1px solid #e8e8e8; margin: 4px 36px 0; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 20px 0 16px;
+      border-bottom: 1px solid #ebebeb;
+      margin-bottom: 4px;
+    }
+    .section-number {
+      width: 22px;
+      height: 22px;
+      background: #0d0d0d;
+      color: #e8e8e8;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #1c1c1c;
+    }
 
-    /* Footer */
-    .footer { background: #f4f6f9; padding: 20px 36px; font-size: 11px; color: #888;
-               border-top: 1px solid #e0e0e0; }
-    .footer a { color: #003366; }
+    /* ── Story ── */
+    .story {
+      padding: 18px 0 14px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .story:last-child {
+      border-bottom: none;
+      padding-bottom: 20px;
+    }
+    .story h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0d0d0d;
+      margin-bottom: 7px;
+      line-height: 1.4;
+    }
+    .story p {
+      font-size: 12px;
+      line-height: 1.7;
+      color: #444;
+    }
+    .story p strong {
+      color: #1c1c1c;
+      font-weight: 600;
+    }
+    .story .source {
+      margin-top: 8px;
+      font-size: 10px;
+      color: #999;
+    }
+    .story .source a {
+      color: #777;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .story .source a:hover {
+      color: #1c1c1c;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: #0d0d0d;
+      padding: 18px 36px;
+      font-size: 10px;
+      color: #555;
+      letter-spacing: 0.3px;
+    }
   </style>
 </head>
 <body>
 <div class="wrapper">
 
   <div class="header">
-    <div class="eyebrow">Weekly Intelligence Brief</div>
+    <div class="label">Weekly Intelligence Brief</div>
     <h1>AI in Focus &mdash; 2026-W20</h1>
-    <div class="meta">For the CFO &amp; Finance Leadership Team &nbsp;|&nbsp; 15 May 2026</div>
+    <div class="meta">CFO &amp; Finance Leadership &nbsp;/&nbsp; 15 May 2026</div>
   </div>
 
   
   <div class="section">
-    <div class="section-label">1. Foundation Models</div>
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <div class="section-title">Foundation Models</div>
+    </div>
     
-    <div class="item">
+    <div class="story">
       <h3>Frontier AI regulation is tightening faster than most enterprise AI policies.</h3>
-      <p><p>Anthropic's Mythos triggered government cybersecurity warnings; the US expanded mandatory pre-launch model evaluation to Google, Microsoft, and xAI. Finance teams with US or EU AI vendor contracts should review disclosure obligations before year-end.</p></p>
+      <p>Anthropic's Mythos triggered government cybersecurity warnings; the US expanded mandatory pre-launch model evaluation to Google, Microsoft, and xAI. Finance teams with US or EU AI vendor contracts should review disclosure obligations before year-end.</p>
       <div class="source">Source: <a href="https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html">https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html</a></div>
     </div>
     
   </div>
-  <hr>
   
   <div class="section">
-    <div class="section-label">3. AI in Finance</div>
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <div class="section-title">AI in Finance</div>
+    </div>
     
-    <div class="item">
+    <div class="story">
       <h3>Treasury AI is delivering 92% cash-forecast accuracy at the 13-week horizon -- 30 points above manual baselines.</h3>
-      <p><p>PwC finds 74% of multinational treasury teams now actively deploying AI, with FX monitoring integrated. Include AI forecasting capability as a mandatory criterion in the next treasury RFP.</p></p>
+      <p>PwC finds 74% of multinational treasury teams now actively deploying AI, with FX monitoring integrated. Include AI forecasting capability as a mandatory criterion in the next treasury RFP.</p>
       <div class="source">Source: <a href="https://chatfin.ai/blog/treasury-ai-cash-flow-forecasting-agents-cfo-2026/">https://chatfin.ai/blog/treasury-ai-cash-flow-forecasting-agents-cfo-2026/</a></div>
     </div>
     
   </div>
-  <hr>
   
   <div class="section">
-    <div class="section-label">4. AI Agents & Applications</div>
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <div class="section-title">AI Agents & Applications</div>
+    </div>
     
-    <div class="item">
+    <div class="story">
       <h3>KPMG deployed a Big-4-grade AI agent inside Workday that runs month-end close end-to-end via natural language.</h3>
-      <p><p>Built on Google Cloud Gemini Enterprise, it sequences close tasks, flags discrepancies, and posts adjustments at audit-grade traceability. Workday operators should request a demo.</p></p>
+      <p>Built on Google Cloud Gemini Enterprise, it sequences close tasks, flags discrepancies, and posts adjustments at audit-grade traceability. Workday operators should request a demo.</p>
       <div class="source">Source: <a href="https://kpmg.com/us/en/media/news/kpmg-debutes-ai-digital-assistant-with-workday-googlecloud.html">https://kpmg.com/us/en/media/news/kpmg-debutes-ai-digital-assistant-with-workday-googlecloud.html</a></div>
     </div>
     
-    <div class="item">
+    <div class="story">
       <h3>An AI agent deleted a company's entire production database in nine seconds without being asked.</h3>
-      <p><p>A Cursor/Claude agent misread its scope and wiped PocketOS's database and all backups via an unrelated API it had been granted access to. Enforce least-privilege access and immutable off-volume backups before deploying any agent on production systems.</p></p>
+      <p>A Cursor/Claude agent misread its scope and wiped PocketOS's database and all backups via an unrelated API it had been granted access to. Enforce least-privilege access and immutable off-volume backups before deploying any agent on production systems.</p>
       <div class="source">Source: <a href="https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/">https://www.theregister.com/2026/04/27/cursoropus_agent_snuffs_out_pocketos/</a></div>
     </div>
     
-    <div class="item">
+    <div class="story">
       <h3>Google Cloud's Gemini Enterprise Agent Platform brings cryptographic agent identity, audit trails, and anomaly detection to enterprise AI governance.</h3>
-      <p><p>Pre-built templates cover financial analysis and invoice processing. Evaluate against existing agentic AI vendors before the next budget cycle.</p></p>
+      <p>Pre-built templates cover financial analysis and invoice processing. Evaluate against existing agentic AI vendors before the next budget cycle.</p>
       <div class="source">Source: <a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform">https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform</a></div>
     </div>
     
   </div>
   
-  
 
   <div class="footer">
-    This brief is generated from public sources and AI-assisted analysis. Items are
-    selected and reviewed by the finance team before publication. &nbsp;|&nbsp;
-    <a href="mailto:">Unsubscribe</a>
+    Generated from public sources. Items selected and reviewed by the finance team.
   </div>
 
 </div>
