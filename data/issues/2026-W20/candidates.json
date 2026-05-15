@@ -88,5 +88,23 @@
     "so_what": "The make-vs-buy decision for internal AI tooling has shifted; finance teams should pressure-test vendor pricing against open-weight alternatives at next contract renewal.",
     "source_url": "https://whatllm.org/blog/new-ai-models-may-2026",
     "scores": { "relevance": 7, "novelty": 8, "materiality": 8, "total": 23 }
+  },
+  {
+    "id": "foundation_003",
+    "category": "foundation",
+    "headline": "Ramp data: Anthropic overtook OpenAI in enterprise AI adoption for first time",
+    "what": "Ramp's May 2026 AI Index shows Anthropic reached 34.4% of business customers vs OpenAI's 32.3%, the first time Anthropic has led. Anthropic quadrupled business adoption year-on-year, driven largely by Claude Code; OpenAI grew only 0.3% over the same period.",
+    "so_what": "Platform concentration risk has shifted: CFOs building on Claude now have evidence of accelerating enterprise network effects, but the same data flags concentration in a single vendor approaching half of business AI spend.",
+    "source_url": "https://ramp.com/leading-indicators/ai-index-may-2026",
+    "scores": { "relevance": 7, "novelty": 9, "materiality": 8, "total": 24 }
+  },
+  {
+    "id": "tips_001",
+    "category": "tips",
+    "headline": "YouTube: How to deploy Anthropic's 10 finance agent templates in Claude Cowork",
+    "what": "Anthropic's official walkthrough (May 8, 2026, ~12 min) demonstrates deploying the 10 finance agent templates end-to-end inside Claude Cowork: GL reconciler, month-end closer, KYC screener, and earnings reviewer, with live demo of Microsoft 365 hand-off to Excel.",
+    "so_what": "Finance teams can follow this video to go from zero to a running month-end closer in a single session, without a developer.",
+    "source_url": "https://www.youtube.com/watch?v=foxeK2AXfHQ",
+    "scores": { "relevance": 9, "novelty": 8, "materiality": 9, "total": 26 }
   }
 ]
