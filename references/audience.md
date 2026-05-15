@@ -8,16 +8,31 @@
 - Direct reports include: Group Treasurer, Head of Tax, Financial Controllers,
   Head of FP&A
 
+## Category priority and weighting
+
+**Finance AI is the primary category. At least 50% of selected items per issue
+must be finance-related.** Score finance items with a +1 bonus on materiality.
+
+Category order in the output:
+1. AI in Finance (target 3+ items per issue)
+2. AI Agents & Applications
+3. Physical AI
+4. Foundation Models
+
 ## What they care about (AI relevance filters)
 
-**High relevance:**
-- AI that reduces cost or headcount in finance ops (AP/AR automation, close acceleration)
-- AI in treasury: cash forecasting, FX hedging optimisation, bank connectivity
+**Highest relevance (score 8-10):**
+- AI purpose-built for finance workflows: GL reconciliation, AP/AR, close, audit, reporting
+- AI in treasury: cash forecasting, FX hedging optimisation, payments, bank connectivity
 - AI in tax/customs: duty classification, transfer pricing, e-invoicing mandates
+- Named finance agent deployments from Big-4, major ERP vendors, or tier-1 banks
+- AI agent governance and risk controls in finance contexts
 - AI that affects port throughput, berth utilisation, or vessel scheduling (capex impact)
 - Autonomous port equipment (cranes, AGVs, drones) — capex cycles, safety liability
-- AI regulation that creates compliance obligations (EU AI Act, SEC disclosure rules)
-- Foundation model cost curves — affects the build-vs-buy calculus for internal tools
+
+**Moderate relevance (score 6-8):**
+- Foundation model cost curves — affects build-vs-buy calculus for internal tools
+- AI regulation creating compliance obligations (EU AI Act, SEC disclosure rules)
 - Agentic AI that could automate CFO-office workflows (reporting, board packs, audit)
 
 **Lower relevance (score down):**

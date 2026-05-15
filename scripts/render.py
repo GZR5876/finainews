@@ -30,10 +30,10 @@ DATA = ROOT / "data"
 DB_PATH = DATA / "history.db"
 
 SECTION_MAP = {
-    "foundation": "1. Foundation Models",
-    "physical":   "2. Physical AI",
-    "finance":    "3. AI in Finance",
-    "agents":     "4. AI Agents & Applications",
+    "finance":    "1. AI in Finance",
+    "agents":     "2. AI Agents & Applications",
+    "physical":   "3. Physical AI",
+    "foundation": "4. Foundation Models",
 }
 
 

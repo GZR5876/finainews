@@ -28,12 +28,12 @@ Write as a trusted adviser who respects the reader's time.
 ## Length
 ~60 words per item. Three sentences maximum. Tight is better than thorough.
 
-## Section headers (use these exactly)
+## Section headers (use these exactly -- finance leads)
 ```
-## 1. Foundation Models
-## 2. Physical AI
-## 3. AI in Finance
-## 4. AI Agents & Applications
+## 1. AI in Finance
+## 2. AI Agents & Applications
+## 3. Physical AI
+## 4. Foundation Models
 ```
 
 ## Example item (Finance AI)

@@ -1,4 +1,10 @@
-# Sources — AI in Finance (Accounting, Tax, Treasury, Compliance)
+# Sources -- AI in Finance (Accounting, Tax, Treasury, Compliance)
+
+## High-priority finance AI pages (check every week, score with +1 materiality bonus)
+- https://www.anthropic.com/news/finance-agents  (Anthropic finance agent templates)
+- https://www.anthropic.com/news  (filter for finance/enterprise releases)
+- https://openai.com/solutions/financial-services
+- https://cloud.google.com/solutions/financial-services
 
 ## CFO & finance leadership
 - https://www.cfo.com
