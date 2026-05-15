@@ -1,0 +1,5 @@
+data/history.db
+data/issues/*/newsletter.pdf
+__pycache__/
+*.py[cod]
+.env

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Intelligence Brief — {{ week }}</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #f4f6f9; color: #1a1a2e; }
+
+    .wrapper { max-width: 720px; margin: 0 auto; background: white; }
+
+    /* Header */
+    .header { background: #003366; color: white; padding: 28px 36px 20px; }
+    .header .eyebrow { font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+                        opacity: 0.7; margin-bottom: 6px; }
+    .header h1 { font-size: 22px; font-weight: 700; line-height: 1.2; }
+    .header .meta { font-size: 11px; opacity: 0.6; margin-top: 8px; }
+
+    /* Section */
+    .section { padding: 24px 36px 0; }
+    .section-label { display: inline-block; background: #003366; color: white;
+                      font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+                      padding: 3px 10px; border-radius: 3px; margin-bottom: 16px; }
+
+    /* Item */
+    .item { border-left: 3px solid #003366; padding: 0 0 20px 16px; margin-bottom: 20px; }
+    .item:last-child { border-left-color: #e0e0e0; }
+    .item h3 { font-size: 14px; font-weight: 700; color: #003366; margin-bottom: 6px;
+               line-height: 1.35; }
+    .item p { font-size: 13px; line-height: 1.65; color: #333; }
+    .item .source { font-size: 11px; color: #888; margin-top: 6px; }
+    .item .source a { color: #888; }
+
+    /* Divider */
+    hr { border: none; border-top: 1px solid #e8e8e8; margin: 4px 36px 0; }
+
+    /* Footer */
+    .footer { background: #f4f6f9; padding: 20px 36px; font-size: 11px; color: #888;
+               border-top: 1px solid #e0e0e0; }
+    .footer a { color: #003366; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="eyebrow">Weekly Intelligence Brief</div>
+    <h1>AI in Focus &mdash; {{ week }}</h1>
+    <div class="meta">For the CFO &amp; Finance Leadership Team &nbsp;|&nbsp; {{ issue_date }}</div>
+  </div>
+
+  {% for section in sections %}
+  <div class="section">
+    <div class="section-label">{{ section.label }}</div>
+    {% for item in section.items %}
+    <div class="item">
+      <h3>{{ item.headline }}</h3>
+      <p>{{ item.body_html }}</p>
+      <div class="source">Source: <a href="{{ item.source_url }}">{{ item.source_url }}</a></div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if not loop.last %}<hr>{% endif %}
+  {% endfor %}
+
+  <div class="footer">
+    This brief is generated from public sources and AI-assisted analysis. Items are
+    selected and reviewed by the finance team before publication. &nbsp;|&nbsp;
+    <a href="mailto:">Unsubscribe</a>
+  </div>
+
+</div>
+</body>
+</html>

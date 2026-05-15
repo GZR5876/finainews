@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI News Candidates — {{ week }}</title>
+  <style>
+    body { font-family: Arial, sans-serif; font-size: 13px; margin: 2em; color: #222; }
+    h1 { font-size: 1.4em; border-bottom: 2px solid #003366; padding-bottom: 0.3em; }
+    h2 { font-size: 1.1em; color: #003366; margin-top: 2em; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 1.5em; }
+    th { background: #003366; color: white; padding: 6px 10px; text-align: left; }
+    td { padding: 6px 10px; border-bottom: 1px solid #ddd; vertical-align: top; }
+    tr:hover { background: #f5f8ff; }
+    .score-total { font-weight: bold; }
+    .score-high { color: #006600; }
+    .score-mid  { color: #996600; }
+    .score-low  { color: #cc0000; }
+    .what { color: #444; font-size: 0.95em; }
+    .so-what { color: #003366; font-style: italic; font-size: 0.95em; }
+    .url a { color: #555; font-size: 0.85em; word-break: break-all; }
+    .instructions { background: #fffbe6; border: 1px solid #e6c800;
+                    padding: 1em; margin-bottom: 2em; border-radius: 4px; }
+    code { background: #f0f0f0; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h1>AI News Candidates &mdash; {{ week }}</h1>
+  <p>Generated: {{ generated_at }} &nbsp;|&nbsp; Total candidates: {{ items | length }}</p>
+
+  <div class="instructions">
+    <strong>Next step:</strong> Review the items below, then edit
+    <code>data/issues/{{ week }}/selections.json</code> to choose which items
+    to include in the newsletter. Add an optional <code>user_comment</code> to
+    each selected item to guide the narrative. Then tell Claude to continue.
+  </div>
+
+  {% for category, label in [
+      ('foundation', '1. Foundation Models'),
+      ('physical',   '2. Physical AI'),
+      ('finance',    '3. AI in Finance'),
+      ('agents',     '4. AI Agents &amp; Applications')
+  ] %}
+  {% set cat_items = items | selectattr('category', 'equalto', category) | list %}
+  {% if cat_items %}
+  <h2>{{ label }}</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:3%">#</th>
+        <th style="width:4%">ID</th>
+        <th style="width:28%">Headline</th>
+        <th style="width:35%">What / So What</th>
+        <th style="width:12%">Source</th>
+        <th style="width:18%">Scores (R / N / M = Total)</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for item in cat_items | sort(attribute='scores.total', reverse=True) %}
+    {% set total = item.scores.total %}
+    {% set cls = 'score-high' if total >= 26 else ('score-mid' if total >= 22 else 'score-low') %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td><code>{{ item.id }}</code></td>
+      <td><strong>{{ item.headline }}</strong></td>
+      <td>
+        <div class="what">{{ item.what }}</div>
+        <div class="so-what">&#8594; {{ item.so_what }}</div>
+      </td>
+      <td class="url"><a href="{{ item.source_url }}" target="_blank">{{ item.source_url | truncate(40) }}</a></td>
+      <td class="{{ cls }} score-total">
+        {{ item.scores.relevance }} / {{ item.scores.novelty }} / {{ item.scores.materiality }}
+        = <strong>{{ total }}</strong>
+      </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% endfor %}
+</body>
+</html>
