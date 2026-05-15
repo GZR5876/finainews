@@ -20,6 +20,13 @@
 - https://www.sap.com/news/  (SAP Joule)
 - https://www.oracle.com/news/  (Oracle AI)
 - https://www.workday.com/en-us/company/newsroom.html
+- https://cloud.google.com/blog/products/ai-machine-learning  (Google Cloud AI)
+
+## Big-4 AI announcements (check every week — high signal for CFO audience)
+- https://kpmg.com/us/en/media/news.html
+- https://www.deloitte.com/global/en/about/press-room.html
+- https://www.pwc.com/gx/en/news-room.html
+- https://www.ey.com/en_gl/newsroom
 
 ## What to look for
 - New agentic AI products capable of autonomous multi-step workflows in enterprise

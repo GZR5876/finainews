@@ -106,5 +106,23 @@
     "so_what": "Finance teams should run a data-readiness diagnostic against these five criteria before committing to an agentic AI vendor — gaps here are the most common reason implementations stall post-contract.",
     "source_url": "https://www.technologyreview.com/2026/05/14/1137034/data-readiness-for-agentic-ai-in-financial-services/",
     "scores": { "relevance": 8, "novelty": 7, "materiality": 7, "total": 22 }
+  },
+  {
+    "id": "agents_004",
+    "category": "agents",
+    "headline": "KPMG launches AI financial close assistant built on Workday + Google Cloud Gemini Enterprise",
+    "what": "KPMG's Ignite Financial Close Companion, launched April 22, is an AI agent embedded directly in Workday that automates month-end close tasks via natural language instructions — executing checklist items in sequence, interpreting financial data, identifying discrepancies, and flagging anomalies for controller review. It is powered by Google Cloud's Gemini Enterprise and targets legal entity controllers and accounting analysts.",
+    "so_what": "A Big-4 firm deploying a production close agent inside Workday validates the technology at enterprise audit-grade standards — port operators on Workday should request a demo and assess fit against their own close cycle.",
+    "source_url": "https://kpmg.com/us/en/media/news/kpmg-debutes-ai-digital-assistant-with-workday-googlecloud.html",
+    "scores": { "relevance": 9, "novelty": 8, "materiality": 9, "total": 26 }
+  },
+  {
+    "id": "agents_005",
+    "category": "agents",
+    "headline": "Google Cloud launches Gemini Enterprise Agent Platform — governance, identity, and long-running agents for enterprise",
+    "what": "Google Cloud's Gemini Enterprise Agent Platform (April 22) consolidates agent development, scaling, and governance into a single enterprise product. Key additions over Vertex AI include cryptographic agent identity, an Agent Gateway for cross-environment connectivity, Agent Anomaly Detection, and support for long-running autonomous workflows lasting days. Pre-built Agent Garden templates cover financial analysis and invoice processing out of the box.",
+    "so_what": "Google's governance layer — cryptographic agent IDs, anomaly detection, auditable authorisation — directly addresses the control and liability concerns that have held CFO offices back from approving agentic AI in finance; this shifts the risk conversation materially.",
+    "source_url": "https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform",
+    "scores": { "relevance": 8, "novelty": 9, "materiality": 8, "total": 25 }
   }
 ]

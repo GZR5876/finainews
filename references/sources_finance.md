@@ -18,11 +18,15 @@
 - https://taxfoundation.org/blog/
 - https://www.wco.int/en/media/newsroom.aspx  (World Customs Organization)
 
-## Big-4 & advisory publications
-- https://www.deloitte.com/global/en/services/consulting/research/cfo-signals.html
-- https://www.pwc.com/gx/en/cfo-agenda.html
-- https://www.ey.com/en_gl/cfo-agenda
+## Big-4 & advisory publications (check news rooms, not just thought leadership)
+- https://kpmg.com/us/en/media/news.html          ← product/partnership launches here
 - https://kpmg.com/xx/en/our-insights/cfo-insights.html
+- https://www.deloitte.com/global/en/about/press-room.html
+- https://www.deloitte.com/global/en/services/consulting/research/cfo-signals.html
+- https://www.pwc.com/gx/en/news-room.html
+- https://www.pwc.com/gx/en/cfo-agenda.html
+- https://www.ey.com/en_gl/newsroom
+- https://www.ey.com/en_gl/cfo-agenda
 
 ## Fintech & AI-in-finance media
 - https://www.fintechfutures.com
