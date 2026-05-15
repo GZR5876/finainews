@@ -4,21 +4,23 @@
 Executive briefing — not a blog post, not a press release.
 Write as a trusted adviser who respects the reader's time.
 
-## Structure per item
-1. **Impact lead** (1 sentence): the operational or financial consequence, stated plainly.
-2. **Context** (2–3 sentences): what happened, who did it, what is the scale/evidence.
-3. **Implication** (1 sentence): what the CFO's team should monitor, evaluate, or decide.
+## Structure per item (three sentences, then source URL)
+1. **Impact lead** (1 sentence, bold): the operational or financial consequence, stated plainly.
+2. **Context** (1 sentence): what happened, who did it, key facts or scale.
+3. **Implication** (1 sentence): what the CFO's team should do or watch.
+4. `Source: {url}` on its own line.
 
 ## Language rules
 - Active voice. Present or near-future tense where possible.
 - Numbers over adjectives: "cuts processing time by 40%" beats "significantly faster".
 - Avoid: "revolutionary", "game-changing", "unprecedented", "unleash", "harness".
 - Avoid passive hedges: "it is expected that", "it may be possible to".
+- **No em dashes.** Use a comma, colon, or recast the sentence instead.
 - Define any acronym on first use: "autonomous guided vehicles (AGVs)".
 - Vendor names are fine; do not editorially endorse or condemn them.
 
 ## Length
-~120 words per item. Tight is better than thorough.
+~60 words per item. Three sentences maximum. Tight is better than thorough.
 
 ## Section headers (use these exactly)
 ```

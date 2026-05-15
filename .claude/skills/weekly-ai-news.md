@@ -56,12 +56,24 @@ After all four categories are scouted:
 ## Phase 3: Polish (human checkpoint)
 
 1. Read data/issues/{week}/selections.json.
-2. For each selected item, write a polished newsletter entry (~120 words) in the
-   voice defined in references/voice.md:
-   - Lead with the so-what (operational/financial impact first)
-   - Follow with what happened (2–3 sentences of context)
-   - End with a one-sentence implication or question for the CFO's team
-3. Assemble into data/issues/{week}/draft.md using the four-section structure.
+2. For each selected item, write a newsletter entry in the voice defined in
+   references/voice.md. Hard rules for every item:
+   - **No em dashes** anywhere in the text. Use a comma, colon, or recast the sentence.
+   - **Three sentences maximum per item:**
+     1. Bold impact lead — one sentence stating the operational or financial consequence.
+     2. One short context sentence covering the key facts (who, what, scale/evidence).
+     3. One action/implication sentence for the CFO's team.
+   - **Source URL on its own line** after the three sentences, prefixed with `Source:`.
+   - Total target: ~60 words per item, not 120.
+3. Assemble into data/issues/{week}/draft.md using the four-section structure:
+   ```
+   ## 1. Foundation Models
+   ## 2. Physical AI
+   ## 3. AI in Finance
+   ## 4. AI Agents & Applications
+   ```
+   Omit any section with no selected items. Separate items within a section
+   with a single blank line. Separate sections with `---`.
 4. **STOP.** Tell the user:
    > "Draft ready at data/issues/{week}/draft.md. Edit freely, then tell me to
    > render when ready."
