@@ -1,0 +1,58 @@
+name: Weekly AI News
+
+on:
+  schedule:
+    # Every Friday at 06:00 UTC — adjust to your timezone
+    - cron: "0 6 * * 5"
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Week label (e.g. 2025-W20). Leave blank for current week."
+        required: false
+        default: ""
+      skip_gate2:
+        description: "Skip Gate 2 (human draft edit)"
+        type: boolean
+        default: false
+
+jobs:
+  scout-and-draft:
+    name: Scout & Draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run orchestrator (CI mode — auto Gate 1, skip Gate 2)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RESEND_API_KEY:    ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM:       ${{ secrets.RESEND_FROM }}
+          RESEND_TO:         ${{ secrets.RESEND_TO }}
+          GATE1_CI: "1"
+          GATE2_CI: "1"
+        run: |
+          WEEK_ARG=""
+          if [ -n "${{ github.event.inputs.week }}" ]; then
+            WEEK_ARG="--week ${{ github.event.inputs.week }}"
+          fi
+          python orchestrator.py $WEEK_ARG --skip-gate1 --skip-gate2
+
+      - name: Commit DB and outputs back to repo
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news.db data/draft_*.md data/newsletter_*.html || true
+          git diff --cached --quiet || git commit -m "chore: weekly AI news $(date +%Y-W%V)"
+          git push
