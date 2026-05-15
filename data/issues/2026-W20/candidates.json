@@ -1,0 +1,110 @@
+[
+  {
+    "id": "foundation_001",
+    "category": "foundation",
+    "headline": "Enterprise AI token costs fall 67% year-on-year as open-source models capture 38% of enterprise volume",
+    "what": "The AI Cost Consortium reports enterprise token prices dropped from $18.40 to $6.07 per million tokens in 12 months, driven by DeepSeek V4-Flash's April 2026 release at $0.14/M input tokens and widespread model-routing adoption. Open-source models now handle 38% of enterprise AI workloads for the first time, a structural shift that compresses vendor margins.",
+    "so_what": "The build-vs-buy calculus for internal AI tooling has shifted materially — teams that deferred AI investment pending cost clarity now have a defensible business case.",
+    "source_url": "https://www.mykxlg.com/online_features/press_releases/aicc-report-enterprise-token-costs-drop-67-year-over-year-as-multi-model-ai-adoption/",
+    "scores": { "relevance": 8, "novelty": 8, "materiality": 9, "total": 25 }
+  },
+  {
+    "id": "foundation_002",
+    "category": "foundation",
+    "headline": "Anthropic's Mythos model triggers government cyber alerts; EU access granted to OpenAI's GPT-5.5-Cyber",
+    "what": "Anthropic's new Mythos model, initially a research preview for managed agentic systems, prompted cybersecurity warnings from multiple governments due to its autonomous code-generation capabilities. Separately, OpenAI agreed to give EU regulators early access to GPT-5.5-Cyber for evaluation, while Anthropic is still in negotiations.",
+    "so_what": "Regulatory scrutiny of frontier AI models is accelerating — finance functions deploying agentic AI tools should anticipate disclosure requirements and vendor compliance obligations.",
+    "source_url": "https://www.cnbc.com/2026/05/11/openai-eu-cyber-model-anthropic-mythos-gpt.html",
+    "scores": { "relevance": 7, "novelty": 8, "materiality": 7, "total": 22 }
+  },
+  {
+    "id": "foundation_003",
+    "category": "foundation",
+    "headline": "US government expands pre-launch AI model testing to Google, Microsoft, and xAI",
+    "what": "The Trump administration extended its AI safety evaluation programme — previously limited to OpenAI and Anthropic — to include Google DeepMind, Microsoft, and xAI. Participating vendors must give government evaluators early access before public release of frontier models.",
+    "so_what": "Mandatory pre-release government evaluation signals a maturing regulatory posture that will extend to enterprise AI deployments; global operators should map their AI vendor relationships against emerging compliance timelines.",
+    "source_url": "https://www.bloomberg.com/news/articles/2026-05-05/ai-firms-agree-to-give-us-early-access-to-evaluate-their-models",
+    "scores": { "relevance": 7, "novelty": 7, "materiality": 7, "total": 21 }
+  },
+  {
+    "id": "physical_001",
+    "category": "physical",
+    "headline": "Fully automated terminals now process 58 containers/crane-hour — 50% above manual benchmark",
+    "what": "Industry data compiled across automated container terminals in 2026 shows fully robotic facilities achieving 58 container moves per crane-hour, 40% higher overall productivity than conventional terminals, and operating cost reductions of up to 70%. China operates 52 robotic ports; Singapore's Tuas Port runs 1,000+ AGVs coordinated by a single AI fleet management system.",
+    "so_what": "These productivity gaps are becoming visible to port customers and cargo owners — operators still reliant on manual handling face increasing competitive pressure on tariff rates and berthing windows.",
+    "source_url": "https://www.gosships.com/p/the-robots-are-taking-over-the-ports-and-the-numbers-are-staggering",
+    "scores": { "relevance": 9, "novelty": 7, "materiality": 9, "total": 25 }
+  },
+  {
+    "id": "physical_002",
+    "category": "physical",
+    "headline": "NVIDIA releases Cosmos Reason 2 — a leaderboard-leading vision model for port robotics and autonomous equipment",
+    "what": "NVIDIA's Cosmos Reason 2, released as part of its open physical-AI model family, tops current vision-language model benchmarks and is purpose-built for robots and autonomous vehicles operating in complex physical environments. The model is available open-weight and integrates with NVIDIA Omniverse for simulation-based testing before real-world deployment.",
+    "so_what": "An open, production-grade AI vision model removes a key barrier to equipping port cranes, AGVs, and inspection drones with contextual scene understanding — expect vendors to embed this in terminal equipment over the next 12–18 months.",
+    "source_url": "https://nvidianews.nvidia.com/news/nvidia-announces-major-release-of-cosmos-world-foundation-models-and-physical-ai-data-tools",
+    "scores": { "relevance": 7, "novelty": 8, "materiality": 7, "total": 22 }
+  },
+  {
+    "id": "finance_001",
+    "category": "finance",
+    "headline": "Deloitte Q1 2026 CFO survey: cost management is the top internal risk; 49% face pressure to invest in AI now",
+    "what": "Deloitte's Q1 2026 CFO Signals survey of 200+ CFOs identifies cost management as the leading internal risk for the first time in three quarters. 49% report board-level pressure to accelerate technology investment, with automation and AI rated the most effective lever for cost control — ahead of headcount reduction and procurement renegotiation.",
+    "so_what": "CFOs who lack a documented AI adoption roadmap risk appearing behind peers at board and audit committee conversations — a near-term governance and perception risk.",
+    "source_url": "https://www.cfodive.com/news/cfos-face-expanded-mandate-pressures-volatile-2026-deloitte-ai/816558/",
+    "scores": { "relevance": 9, "novelty": 7, "materiality": 8, "total": 24 }
+  },
+  {
+    "id": "finance_002",
+    "category": "finance",
+    "headline": "AP automation in 2026: 76% cost reduction and 70%+ touchless invoice rates now documented at enterprise scale",
+    "what": "Aggregated deployment data across enterprise AP automation platforms (HighRadius, SAP S/4HANA, Coupa) shows 70% faster invoice cycle times, 76% lower processing cost per invoice, and touchless processing rates above 70% for mature implementations. HighRadius's 20+ AI agents now handle balance-sheet reconciliation, exception flagging, variance classification, and journal posting end-to-end.",
+    "so_what": "Port operators with high invoice volumes from shipping lines, stevedores, and fuel suppliers should benchmark current cost-per-invoice against these figures; the gap is quantifiable and closeable within a 12-month implementation.",
+    "source_url": "https://softco.com/guides/ai-in-finance-2026-the-cfo-guide-to-automation-compliance-ap-efficiency",
+    "scores": { "relevance": 9, "novelty": 7, "materiality": 9, "total": 25 }
+  },
+  {
+    "id": "finance_003",
+    "category": "finance",
+    "headline": "Treasury AI achieves 92% cash-forecast accuracy at 13-week horizon; 74% of multinational teams now scaling",
+    "what": "PwC's 2026 treasury survey finds 74% of multinational treasury teams are expanding or actively deploying AI, up from 53% in 2025. Platforms including Kyriba's Trusted Agentic AI (TAI) and HighRadius report 92%+ forecast accuracy at the 13-week horizon — a 30-percentage-point improvement over manual baselines — with real-time FX exposure monitoring and hedge-ratio recommendations integrated.",
+    "so_what": "Treasury teams managing multi-currency cash pools across port jurisdictions have a validated, enterprise-grade toolset available now — a treasury system review should include these capabilities in the next RFP cycle.",
+    "source_url": "https://chatfin.ai/blog/treasury-ai-cash-flow-forecasting-agents-cfo-2026/",
+    "scores": { "relevance": 9, "novelty": 7, "materiality": 8, "total": 24 }
+  },
+  {
+    "id": "finance_004",
+    "category": "finance",
+    "headline": "CBP issues first ruling on AI-powered customs classification tools; EU mandates 10-digit TARIC codes from July 2026",
+    "what": "US Customs and Border Protection (CBP) issued Headquarters Ruling H350722 in January 2026 — its first ruling addressing AI classification tools — establishing that AI-generated classifications constitute 'customs business' requiring a licensed broker's approval at defined confidence thresholds. Separately, the EU has mandated full 10-digit TARIC codes for all IOSS-registered sellers effective July 2026.",
+    "so_what": "Port operators processing high volumes of containerised cargo must audit their AI-assisted classification workflows against CBP's new legal threshold and ensure ERP/customs systems are TARIC-code compliant before July.",
+    "source_url": "https://www.customs-declarations.uk/customs-and-trade-ai-moves-from-planning-into-execution-q1-2026-supply-chain-trends/",
+    "scores": { "relevance": 8, "novelty": 8, "materiality": 8, "total": 24 }
+  },
+  {
+    "id": "agents_001",
+    "category": "agents",
+    "headline": "SAP Sapphire 2026: 200+ AI agents across finance, procurement, and supply chain reach GA by Q3",
+    "what": "At SAP Sapphire this month, SAP unveiled its 'Autonomous Enterprise' strategy and confirmed 200+ Joule AI agents across finance, procurement, supply chain, and HR will reach general availability by Q3 2026. Specific Q2 releases include Production Planning, Material Reservation, and Field Service Dispatcher agents; the Finance Close agent and ERP migration tooling (reducing migration effort by 35%) are also live. Microsoft 365 Copilot and SAP Joule are now deeply integrated.",
+    "so_what": "SAP customers running port operations on S/4HANA should validate their release-upgrade roadmap against the Q2/Q3 agent GA schedule — early adoption of the Finance Close and Procurement agents offers measurable quick wins.",
+    "source_url": "https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/",
+    "scores": { "relevance": 9, "novelty": 8, "materiality": 9, "total": 26 }
+  },
+  {
+    "id": "agents_002",
+    "category": "agents",
+    "headline": "Agentic AI compresses financial close from 6.2 to 1.8 days at mid-market enterprises — Hackett Group 2026",
+    "what": "The Hackett Group's 2026 benchmark of mid-market US companies with fully deployed agentic finance workflows reports average month-end close reduced from 6.2 days to 1.8 days. BlackLine, Workiva, and ChatFin led these implementations with configurable autonomy levels at each workflow node. Gartner named agentic AI the top emerging enterprise technology of 2026, with financial close as the most mature production use case.",
+    "so_what": "A 4-day close compression is material for treasury liquidity management and board reporting accuracy — finance leadership should request a vendor demo scoped to their current close-cycle pain points.",
+    "source_url": "https://chatfin.ai/blog/agentic-ai-finance-workflows-multi-agent-close-report-2026/",
+    "scores": { "relevance": 9, "novelty": 8, "materiality": 9, "total": 26 }
+  },
+  {
+    "id": "agents_003",
+    "category": "agents",
+    "headline": "MIT Technology Review: data readiness is the limiting factor for agentic AI in financial services",
+    "what": "A May 14 MIT Tech Review analysis of 60 financial institutions finds that 72% cite data quality and governance — not model capability — as the primary barrier to deploying agentic AI at scale. The report identifies five data-readiness prerequisites: unified data model, real-time feed access, lineage tracking, permissioning, and audit trail completeness.",
+    "so_what": "Finance teams should run a data-readiness diagnostic against these five criteria before committing to an agentic AI vendor — gaps here are the most common reason implementations stall post-contract.",
+    "source_url": "https://www.technologyreview.com/2026/05/14/1137034/data-readiness-for-agentic-ai-in-financial-services/",
+    "scores": { "relevance": 8, "novelty": 7, "materiality": 7, "total": 22 }
+  }
+]
