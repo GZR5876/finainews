@@ -6,6 +6,7 @@
 - https://www.theverge.com/ai-artificial-intelligence
 - https://the-decoder.com
 - https://bensbites.com
+- https://www.theregister.com/emergent_tech/ai/  (incidents, failures, enterprise risk — high signal)
 
 ## Agent-specific & enterprise AI
 - https://www.langchain.com/blog  (LangChain ecosystem)
