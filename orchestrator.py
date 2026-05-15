@@ -47,23 +47,24 @@ def _week_display(label: str) -> str:
 
 
 async def _run_scouts(week_label: str) -> dict[str, list]:
-    print("⟳  Running 4 scouts in parallel…")
-    results = await asyncio.gather(
-        foundation.scout(week_label),
-        physical_ai.scout(week_label),
-        finance.scout(week_label),
-        agents_apps.scout(week_label),
-        return_exceptions=True,
-    )
-    scouts = ["foundation", "physical_ai", "finance", "agents_apps"]
+    print("⟳  Running 4 scouts sequentially (rate-limit safe)…")
+    scouts = [
+        ("foundation",  foundation.scout),
+        ("physical_ai", physical_ai.scout),
+        ("finance",     finance.scout),
+        ("agents_apps", agents_apps.scout),
+    ]
     out = {}
-    for name, res in zip(scouts, results):
-        if isinstance(res, Exception):
-            print(f"  ✗ {name} scout failed: {res}")
-            out[name] = []
-        else:
+    for name, fn in scouts:
+        print(f"  → {name}…")
+        try:
+            res = await fn(week_label)
             print(f"  ✓ {name}: {len(res)} candidates")
             out[name] = res
+        except Exception as e:
+            print(f"  ✗ {name} failed: {e}")
+            out[name] = []
+        await asyncio.sleep(5)  # brief pause between scouts
     return out
 
 

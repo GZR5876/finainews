@@ -2,8 +2,10 @@
 Shared scout agent loop.
 Each category scout inherits ScoutConfig and calls run_scout().
 """
+import asyncio
 import json
 import os
+import time
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Any
@@ -12,7 +14,7 @@ import anthropic
 
 from tools.history import check_history, save_candidate
 
-SCOUT_MODEL = "claude-sonnet-4-6"
+SCOUT_MODEL = "claude-haiku-4-5-20251001"  # higher TPM headroom than Sonnet
 MAX_ITERATIONS = 40  # safety ceiling for tool-use turns
 
 
@@ -105,12 +107,12 @@ def _dispatch_tool(name: str, inputs: dict, category: str, week_label: str) -> A
         return check_history(inputs["url"])
     if name == "save_candidate":
         return save_candidate(
-            url=inputs["url"],
+            url=inputs.get("url", ""),
             category=category,
-            headline=inputs["headline"],
-            what=inputs["what"],
-            so_what=inputs["so_what"],
-            score=inputs["score"],
+            headline=inputs.get("headline", ""),
+            what=inputs.get("what", ""),
+            so_what=inputs.get("so_what", inputs.get("so-what", inputs.get("sowhat", ""))),
+            score=float(inputs.get("score", 5)),
             week_label=week_label,
         )
     return {"error": f"Unknown tool: {name}"}
@@ -145,14 +147,24 @@ async def run_scout(config: ScoutConfig, week_label: str) -> list[dict]:
     saved: list[dict] = []
 
     for _ in range(MAX_ITERATIONS):
-        response = client.beta.messages.create(
-            model=SCOUT_MODEL,
-            max_tokens=4096,
-            system=system,
-            messages=messages,
-            tools=all_tools,
-            betas=["web-search-2025-03-05"],
-        )
+        # Retry up to 5 times with exponential backoff on rate-limit errors
+        for attempt in range(5):
+            try:
+                response = client.beta.messages.create(
+                    model=SCOUT_MODEL,
+                    max_tokens=4096,
+                    system=system,
+                    messages=messages,
+                    tools=all_tools,
+                    betas=["web-search-2025-03-05"],
+                )
+                break
+            except anthropic.RateLimitError as e:
+                wait = 60 * (attempt + 1)
+                print(f"    rate limit hit, waiting {wait}s…")
+                time.sleep(wait)
+                if attempt == 4:
+                    raise
 
         # Append assistant turn
         messages.append({"role": "assistant", "content": response.content})
