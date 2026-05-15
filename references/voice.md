@@ -4,7 +4,13 @@
 Executive briefing — not a blog post, not a press release.
 Write as a trusted adviser who respects the reader's time.
 
-## Structure per item (three sentences, then source URL)
+## Structure per item (headline + three sentences + source URL)
+0. **Headline**: "Company/who did what" — subject + verb + object, max 10 words,
+   no qualifiers or jargon. Examples:
+   - "KPMG deployed an AI close assistant inside Workday"
+   - "Google Cloud launched an enterprise AI agent governance platform"
+   - "Anthropic's Mythos model triggered government cybersecurity warnings"
+   - "A Cursor agent deleted a production database without authorisation"
 1. **Impact lead** (1 sentence, bold): the operational or financial consequence, stated plainly.
 2. **Context** (1 sentence): what happened, who did it, key facts or scale.
 3. **Implication** (1 sentence): what the CFO's team should do or watch.
@@ -31,11 +37,13 @@ Write as a trusted adviser who respects the reader's time.
 ```
 
 ## Example item (Finance AI)
-> **AP automation cost savings now measurable at scale.** KPMG's 2025 CFO
-> survey of 400 multinationals shows accounts-payable AI deployments cut invoice
-> processing cost by an average of 38% and reduced month-end close by 1.4 days.
-> Adoption is highest in Asia-Pacific, where e-invoicing mandates have forced
-> ERP modernisation. Port operators with high invoice volumes from shipping lines,
-> stevedores, and fuel suppliers are well-positioned to capture similar savings —
-> finance teams should benchmark current cost-per-invoice against these figures
-> before the next budgeting cycle.
+
+KPMG deployed an AI close assistant inside Workday
+
+> **Big-4-grade AI is now executing month-end close tasks end-to-end inside a
+> major ERP.** KPMG's Ignite Financial Close Companion, built on Google Cloud
+> Gemini Enterprise, sequences close tasks, flags discrepancies, and posts
+> adjustments via natural language inside Workday. Port operators on Workday
+> should request a scoped demo.
+>
+> Source: https://kpmg.com/us/en/media/news/kpmg-debutes-ai-digital-assistant-with-workday-googlecloud.html

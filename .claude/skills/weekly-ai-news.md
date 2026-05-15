@@ -58,8 +58,10 @@ After all four categories are scouted:
 1. Read data/issues/{week}/selections.json.
 2. For each selected item, write a newsletter entry in the voice defined in
    references/voice.md. Hard rules for every item:
-   - **No em dashes** anywhere in the text. Use a comma, colon, or recast the sentence.
-   - **Three sentences maximum per item:**
+   - **Headline**: "Company/who did what" format — subject + verb + object, max 10
+     words, no qualifiers. Write it as a plain text title above the body sentences.
+   - **No em dashes** anywhere. Use a comma, colon, or recast the sentence.
+   - **Three sentences maximum:**
      1. Bold impact lead — one sentence stating the operational or financial consequence.
      2. One short context sentence covering the key facts (who, what, scale/evidence).
      3. One action/implication sentence for the CFO's team.

@@ -15,12 +15,19 @@
 - https://venturebeat.com/ai/
 
 ## What to look for
-- New model releases or major capability updates (reasoning, multimodal, long context)
-- Significant cost reductions in API pricing (affects build-vs-buy decisions)
-- Safety/alignment developments that signal regulatory attention
-- Open-weight releases that shift the make-vs-buy calculus for enterprise
+- New model releases: name, version, release date, and who released it
+- Capability comparison to prior version or nearest competitor: benchmark scores,
+  context window, reasoning ability, multimodal support, speed, cost per token
+- Open-weight releases that shift the enterprise build-vs-buy calculus
+- Significant API pricing changes (direct impact on internal deployment economics)
+
+## What to deprioritise (score down)
+- Regulatory or policy news about AI models — cover in agents category instead
+- Research papers without a released model or product
+- Incremental fine-tunes or minor API updates with no measurable capability shift
 
 ## Scoring notes
-Relevance to a port CFO is mostly indirect: cost curves and capability jumps
-affect the economics of deploying AI internally. Score higher when there is a
-clear enterprise or industrial application angle.
+Lead question: "Is this a meaningfully more capable or cheaper model than what
+existed last week?" If yes and it has enterprise applicability, score high.
+Relevance to a port CFO is indirect — score higher when the capability jump
+has a clear path to enterprise or industrial deployment within 12 months.
